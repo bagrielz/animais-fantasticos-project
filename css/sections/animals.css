@@ -1,0 +1,71 @@
+.title {
+  font: 400 6rem/1 "Playfair Display SC", georgia;
+  margin-bottom: 1rem;
+  grid-column: 1/4;
+}
+
+.animals h3 {
+  font: 700 1rem "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+  color: #e54;
+}
+
+.animals h3::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 10px;
+  margin-right: 0.625rem;
+  background: #fb5;
+}
+
+.animals p {
+  font-family: Helvetica, Arial;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.animals-list {
+  height: 370px;
+  overflow-y: scroll;
+  grid-column: 2;
+}
+
+.animals-list li {
+  cursor: pointer;
+}
+
+.animals-list::-webkit-scrollbar {
+  width: 18px;
+}
+
+.animals-list::-webkit-scrollbar-thumb {
+  background: #faf6ed;
+  border: 4px solid #fb5;
+}
+
+.animals-list::-webkit-scrollbar-track {
+  background: #fb5;
+}
+
+.animals-description {
+  grid-column: 3;
+}
+
+.js [data-tab="content"] section {
+  display: none;
+}
+
+.js [data-tab="content"] section.active {
+  display: block !important;
+}
+
+.js [data-tab="content"] section.active.show-right {
+  animation: show-right 0.5s forwards;
+}
+
+.js [data-tab="content"] section.active.show-down {
+  animation: show-down 0.5s forwards;
+}

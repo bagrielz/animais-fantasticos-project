@@ -1,0 +1,15 @@
+/* Global */
+@import url("global/reset.css");
+@import url("global/global.css");
+@import url("global/header-footer.css");
+@import url("global/animate.css");
+@import url("global/modal.css");
+@import url("global/tooltip.css");
+@import url("global/dropdown-menu.css");
+@import url("global/responsive.css");
+
+/* Sections */
+@import url("sections/animals.css");
+@import url("sections/faq.css");
+@import url("sections/contact.css");
+@import url("sections/numbers.css");

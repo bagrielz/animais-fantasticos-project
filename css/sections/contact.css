@@ -1,0 +1,43 @@
+.contact-map {
+  grid-column: 2;
+}
+
+.contact-data {
+  grid-column: 3;
+}
+
+.contact-data li {
+  margin-bottom: 1rem;
+  font-family: Helvetica, Arial;
+}
+
+.contact-data li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 0.625rem;
+  background: #fb5;
+}
+
+.btc-value {
+  background: #3f4;
+  padding: 0.2rem 0.5rem;
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+[data-week]::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #ff3333;
+  border-radius: 50%;
+  margin-left: 4px;
+  border: 2px solid #000;
+}
+
+[data-week].open::after {
+  background: #3f4;
+}
