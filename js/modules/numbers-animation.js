@@ -27,6 +27,7 @@ export default function initNumbersAnimation() {
     });
   }
 
+  let observer;
   function handleMutation(mutation) {
     // Verifica se na mutação há a classe 'active' e ativa a função numbersAnimation().
     if (mutation[0].target.classList.contains(activeClass)) {
@@ -37,7 +38,7 @@ export default function initNumbersAnimation() {
   }
 
   // O observador verifica se ocorre alguma mutação no elemento.
-  const observer = new MutationObserver(handleMutation);
+  observer = new MutationObserver(handleMutation);
   // Seleciona o elemento.
   const observerTarget = document.querySelector(".numbers");
 

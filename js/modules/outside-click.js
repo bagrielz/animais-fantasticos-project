@@ -8,15 +8,6 @@ export default function outsideClick(element, events, callback) {
   const html = document.documentElement;
   const outside = "data-outside";
 
-  // Verifica se o evento já foi adicionado.
-  if (!element.hasAttribute(outside)) {
-    events.forEach((userEvent) =>
-      // O callback não é adicionado ao HTML de primeira pelo o bubble, pois o setTimeout() é uma função assíncrona e portanto entra em uma fila de espera até a Call Stack estiver vazia.
-      setTimeout(() => html.addEventListener(userEvent, handleOutsideClick))
-    );
-    element.setAttribute(outside, "");
-  }
-
   // Função só é criada quando oustideClick é ativado.
   function handleOutsideClick(event) {
     // Verifica se o click contém um alvo do elemento (dropdown menu).
@@ -26,5 +17,14 @@ export default function outsideClick(element, events, callback) {
       html.removeEventListener("click", handleOutsideClick);
       callback();
     }
+  }
+
+  // Verifica se o evento já foi adicionado.
+  if (!element.hasAttribute(outside)) {
+    events.forEach((userEvent) =>
+      // O callback não é adicionado ao HTML de primeira pelo o bubble, pois o setTimeout() é uma função assíncrona e portanto entra em uma fila de espera até a Call Stack estiver vazia.
+      setTimeout(() => html.addEventListener(userEvent, handleOutsideClick))
+    );
+    element.setAttribute(outside, "");
   }
 }

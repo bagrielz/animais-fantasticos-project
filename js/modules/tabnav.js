@@ -7,15 +7,15 @@ export default function initTabNav() {
 
   tabContent[0].classList.add(activeClass);
 
-  if (tabMenu.length && tabContent.length) {
-    function activeTab(index) {
-      tabContent.forEach((section) => {
-        section.classList.remove(activeClass);
-      });
-      const direction = tabContent[index].dataset.anime;
-      tabContent[index].classList.add(activeClass, direction);
-    }
+  function activeTab(index) {
+    tabContent.forEach((section) => {
+      section.classList.remove(activeClass);
+    });
+    const direction = tabContent[index].dataset.anime;
+    tabContent[index].classList.add(activeClass, direction);
+  }
 
+  if (tabMenu.length && tabContent.length) {
     tabMenu.forEach((itemMenu, index) => {
       itemMenu.addEventListener("click", () => {
         activeTab(index);

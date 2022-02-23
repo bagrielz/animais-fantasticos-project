@@ -10,7 +10,7 @@ import initOperation from "./modules/operation.js";
 import initFetchAnimals from "./modules/fetch-animals.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
-//Funções ativadas
+// Funções ativadas
 initSmoothScroll();
 initScrollAnimation();
 initAccordion();
