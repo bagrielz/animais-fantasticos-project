@@ -13,7 +13,7 @@ export default class Tooltip {
     // event.page dá um valor inteiro e o que precisamos é de um valor em pixels, por isso se concatena com "px".
     this.tooltipBox.style.top = `${event.pageY + 20}px`;
     if (event.pageX + 240 > window.innerWidth) {
-      this.tooltipBox.style.left = `${event.pageX - 170}px`;
+      this.tooltipBox.style.left = `${event.pageX - 190}px`;
     } else {
       this.tooltipBox.style.left = `${event.pageX + 20}px`;
     }
@@ -55,7 +55,7 @@ export default class Tooltip {
   }
 
   init() {
-    if (this.tooltips.lenght) {
+    if (this.tooltips.length) {
       this.addTooltipEvents();
     }
     return this;
