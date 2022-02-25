@@ -1,4 +1,4 @@
-import initNumbersAnimation from "./numbers-animation.js";
+import NumbersAnimation from "./numbers-animation.js";
 
 // Fetch animals
 export default function initFetchAnimals() {
@@ -20,7 +20,12 @@ export default function initFetchAnimals() {
       numbersGrid.appendChild(divAnimal);
     });
 
-    initNumbersAnimation();
+    const numbersAnimation = new NumbersAnimation(
+      "[data-number]",
+      ".numbers",
+      "active"
+    );
+    numbersAnimation.init();
   }
 
   fetchAnimals("./js/json/animals-api.json");
