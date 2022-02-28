@@ -1,18 +1,41 @@
 // Funcionamento da empresa
-export default function initOperation() {
-  const operation = document.querySelector("[data-week]");
+export default class Operation {
+  constructor(operation) {
+    this.operation = document.querySelector(operation);
+    this.openClass = "open";
+  }
 
-  const daysWeek = operation.dataset.week.split(", ").map(Number);
-  const timeWeek = operation.dataset.time.split(", ").map(Number);
+  operatingData() {
+    this.daysWeek = this.operation.dataset.week.split(", ").map(Number);
+    this.timeWeek = this.operation.dataset.time.split(", ").map(Number);
+  }
 
-  const dateNow = new Date();
-  const dayNow = dateNow.getDay();
-  const timeNow = dateNow.getHours();
+  dataNow() {
+    this.dateNow = new Date();
+    this.dayNow = this.dateNow.getDay();
+    this.timeNow = this.dateNow.getUTCHours() - 3;
+  }
 
-  const weekOpen = daysWeek.indexOf(dayNow) !== -1;
-  const timeOpen = timeNow >= timeWeek[0] && timeNow < timeWeek[1];
+  isOpen() {
+    const weekOpen = this.daysWeek.indexOf(this.dayNow) !== -1;
+    const timeOpen =
+      this.timeNow >= this.timeWeek[0] && this.timeNow < this.timeWeek[1];
 
-  if (weekOpen && timeOpen) {
-    operation.classList.add("open");
+    return weekOpen && timeOpen;
+  }
+
+  activeOpen() {
+    if (this.isOpen()) {
+      this.operation.classList.add(this.openClass);
+    }
+  }
+
+  init() {
+    if (this.operation) {
+      this.operatingData();
+      this.dataNow();
+      this.activeOpen();
+    }
+    return this;
   }
 }
