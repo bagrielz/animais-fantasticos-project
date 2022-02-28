@@ -1,3 +1,5 @@
+import debounce from "./debounce.js";
+
 const activeClass = "active";
 
 // Animação ao scroll
@@ -5,7 +7,7 @@ export default class ScrollAnimation {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.windowHalf = window.innerHeight * 0.6;
-    this.checkDistance = this.checkDistance.bind(this);
+    this.checkDistance = debounce(this.checkDistance.bind(this), 50);
   }
 
   // Pega a distância de cada section em relação ao topo do site.
