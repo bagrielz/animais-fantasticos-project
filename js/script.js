@@ -35,6 +35,7 @@ tooltip.init();
 initDropdownMenu();
 initMenuMobile();
 initOperation();
-initFetchAnimals("./js/json/animals-api.json", ".numbers-grid");
-initFetchBitcoin();
 initScrollAnimation();
+
+initFetchAnimals("./js/json/animals-api.json", ".numbers-grid");
+initFetchBitcoin("https://blockchain.info/ticker", ".btc-value");
