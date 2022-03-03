@@ -32,12 +32,19 @@
 }
 
 [data-anime="accordion"] dt::after {
-  content: "⮧";
+  content: "";
   margin-left: 0.625rem;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: url("../../img/arrow-red.svg") no-repeat center center;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
 }
 
 [data-anime="accordion"] dt.active::after {
-  content: "⮥";
+  content: "";
+  transform: rotate(-90deg);
 }
 
 .js [data-anime="accordion"] dd.active {
