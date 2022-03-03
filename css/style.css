@@ -1,12 +1,11 @@
-/* Global */
-@import url("global/reset.css");
-@import url("global/global.css");
-@import url("global/header-footer.css");
-@import url("global/animate.css");
-@import url("global/modal.css");
-@import url("global/tooltip.css");
-@import url("global/dropdown-menu.css");
-@import url("global/responsive.css");
+/* Geral */
+@import url("geral/reset.css");
+@import url("geral/header-footer.css");
+@import url("geral/animate.css");
+@import url("geral/modal.css");
+@import url("geral/tooltip.css");
+@import url("geral/dropdown-menu.css");
+@import url("geral/responsive.css");
 
 /* Sections */
 @import url("sections/animals.css");
@@ -14,3 +13,6 @@
 @import url("sections/slide.css");
 @import url("sections/contact.css");
 @import url("sections/numbers.css");
+
+/* Global */
+@import url("geral/global.css");
