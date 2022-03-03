@@ -7,6 +7,7 @@ import DropdownMenu from "./modules/dropdown-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
 import Operation from "./modules/operation.js";
 import ScrollAnimation from "./modules/scroll-animation.js";
+import SlideNav from "./modules/slide.js";
 import initFetchAnimals from "./modules/fetch-animals.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
@@ -43,6 +44,10 @@ menuMobile.init();
 
 const operation = new Operation("[data-week]");
 operation.init();
+
+const slide = new SlideNav(".slide-wrapper", ".slide");
+slide.init();
+slide.addControl(".custom-controls");
 
 initFetchAnimals("./js/json/animals-api.json", ".numbers-grid");
 initFetchBitcoin("https://blockchain.info/ticker", ".btc-value");
